@@ -98,19 +98,50 @@ Utilize try-except para assegurar que a entrada seja numérica e utilize if-elif
 para classificar o número como "positivo", "negativo" ou "zero". 
 Adicionalmente, identifique se o número é "par" ou "ímpar"."""
 
-num = None
+# num = None
 
+# while num == None:
+#     try:
+#         num = float(input('\nDigite um número: ').replace(" ",""))
+#     except ValueError:
+#         print('Você digitou um valor inválido. Serão aceitos apenas número como nos exemplos abaixo: \n 10\n 10.5\n -12\nTente novamente: ')
+#         num = None
+
+# if num > 0:
+#     sinal = 'positivo'
+# elif num == 0:
+#     sinal = 'zero'
+# elif num < 0:
+#     sinal = 'negativo'
+
+# if num % 2 == 0:
+#     par_ou_impar = 'par'
+# else:
+#     par_ou_impar = 'ímpar'
+
+
+# print(f'O número é {sinal} e {par_ou_impar}')
+
+"""Exercício 25: Conversão de Tipo com Validação
+
+Crie um script que solicite ao usuário uma lista de números separados por vírgula. 
+O programa deve converter a string de entrada em uma lista de números inteiros. 
+Utilize try-except para tratar a conversão de cada número e validar que cada elemento 
+da lista convertida é um inteiro. Se a conversão falhar ou um elemento não for um 
+inteiro, imprima uma mensagem de erro. 
+Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros."""
+
+num = None
 while num == None:
     try:
-        num = float(input('\nDigite um número: '))
+        num = input('\nDigite uma lista de números: ')
+        num_v2 = num.split(',')
+        num_int = []
+
+        for num in num_v2:
+            num_int.append(int(num.strip()))
     except ValueError:
-        print('Você digitou um valor inválido. Serão aceitos apenas número como nos exemplos abaixo: \n 10\n 10.5\n -12\nTente novamente: ')
+        print('\nValor digitado inválido! a lista deve ser composta da seguinte forma:\nExemplo: 12, -1, 20, 30,40\n\nTente novamente!')
         num = None
-
-if num < 0:
-    sinal = 'positivo'
-elif num == 0:
-    sinal = 'zero'
-elif num < 0:
-    sinal = 'negativo'
-
+print(f'\nAqui está sua lista de números: {num_int}')
+    
